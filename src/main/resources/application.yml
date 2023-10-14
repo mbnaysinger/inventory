@@ -1,0 +1,36 @@
+spring:
+   application:
+      name: inventory
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://localhost:3306/inventory
+      username: root
+      password: mamacc446
+      hikari:
+         validation-query: SELECT 1 FROM DUAL
+         validation-timeout: 60000
+   jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+springfox:
+  documentation:
+    swagger-ui:
+      path: /custom/swagger-ui
+      
+jpa:
+   properties:
+      hibernate:
+         proc.param_null_passing: true
+         jdbc:
+             time_zone: UTC-3
+   logging: 
+      level: 
+        org: 
+          hibernate: 
+            SQL: 
+              DEBUG type: 
+                descriptor: 
+                  sql: 
+                    BasicBinder: TRACE   
